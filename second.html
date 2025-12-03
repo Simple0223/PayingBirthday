@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>姵螢生日挑戰2</title>
+  <style>
+  body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    padding: 20px;
+  }
+
+      h1 {
+          text-align: center;
+          font-size: 60px;
+          margin: 20px 0;
+      }
+
+  /* 預設為直式背景（手機） */
+  body {
+    background-image: url('https://github.com/Simple0223/MightyBirthday/blob/main/straightBackground.png?raw=true'); /* 直式 */
+  }
+
+  /* 橫式時切換背景（橫向手機或桌機） */
+  @media (orientation: landscape) {
+      body {
+          background-image: url('https://github.com/Simple0223/MightyBirthday/blob/main/horizontalBackground.png?raw=true'); /* 橫式 */
+      }
+  }
+
+  .question {
+    background: rgba(0,0,0,0.6);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  .question h3 {
+    margin-top: 0;
+  }
+      button {
+          padding: 10px 20px;
+          font-size: 36px;
+          border: none;
+          border-radius: 8px;
+          background-color: #FFD700;
+          color: #000;
+          cursor: pointer;
+          display: block;
+          margin: 20px auto;
+      }
+  button:hover {
+    background-color: #FFA500;
+  }
+</style>
+</head>
+<body>
+
+    <h1>姵螢生日挑戰</h1>
+    <h3>哼哼哼... 不要太囂張，還有很多題😈</h3>
+
+    <form id="quizForm">
+        <div class="question">
+            <h3>2. 請問拍這張照片那天，哪一個敘述錯誤?</h3>
+            <label><input type="radio" name="q1" value="A">A. 在黃浩鴻家</label><br>
+            <label><input type="radio" name="q1" value="B">B. 那天騎車載張惠琪</label><br>
+            <label><input type="radio" name="q1" value="C">C. 那天跟丁大能有吵架</label>
+        </div>
+    </form>
+    <button type="button" onclick="checkAnswers()">送出答案</button>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: "B",
+            };
+
+            let correct = 0;
+            for (let key in answers) {
+                const selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    correct++;
+                }
+            }
+
+            if (correct === 1) {
+                window.location.href = "third.html";
+            } else {
+                alert(`挑戰失敗，請再次嘗試！`);
+            }
+        }
+    </script>
+
+</body>
+</html>
