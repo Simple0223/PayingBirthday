@@ -24,6 +24,7 @@
 
       h3 {
           text-align: center;
+          font-size: 36px;
       }
 
       /* 圖片不貼邊 */
@@ -54,6 +55,7 @@
           padding: 15px;
           margin-bottom: 20px;
           border-radius: 10px;
+          font-size: 30px;
       }
 
           .question h3 {
@@ -77,6 +79,21 @@
               background-color: #FFA500;
           }
 
+      /* 放大原生 radio（支援度最佳） */
+      label input[type="radio"] {
+          width: 24px;
+          height: 24px;
+          transform: scale(1.2); /* 額外放大 */
+      }
+
+      /* 點到時更明顯 */
+      label:hover {
+          background: rgba(255, 255, 255, 0.25);
+      }
+
+      label input[type="radio"]:checked + span {
+          font-weight: bold;
+      }
 </style>
 </head>
 <body>
@@ -87,11 +104,11 @@
     <form id="quizForm">
         <div class="question">
             <h3>2. 請問關於大家的敘述何者錯誤?</h3>
-            <label><input type="radio" name="q1" value="A">A. 今天慶生預備了 1 週</label><br>
-            <label><input type="radio" name="q1" value="B">B. 蛋糕是張恩霖、黃允諾預備的</label><br>
-            <label><input type="radio" name="q1" value="C">C. 慶生前詢問過王信博、張惠琪、張瑀珊的意見</label><br>
-            <label><input type="radio" name="q1" value="D">D. 陳旻宜、張瑀妍寫了超有溫度的電子卡片</label><br>
-            <label><input type="radio" name="q1" value="E">E. 黃浩鴻特別從山上趕下來參加慶生</label><br>
+            <label><input type="radio" name="q1" value="A"> A. 今天慶生預備了 1 週</label><br>
+            <label><input type="radio" name="q1" value="B"> B. 蛋糕是張恩霖、黃允諾預備的</label><br>
+            <label><input type="radio" name="q1" value="C"> C. 慶生前詢問過王信博、張惠琪、張瑀珊的意見</label><br>
+            <label><input type="radio" name="q1" value="D"> D. 陳旻宜、張瑀妍寫了超有溫度的電子卡片</label><br>
+            <label><input type="radio" name="q1" value="E"> E. 黃浩鴻特別從山上趕下來參加慶生</label><br>
         </div>
     </form>
     <button type="button" onclick="checkAnswers()">送出答案</button>
@@ -111,7 +128,7 @@
             }
 
             if (correct === 1) {
-                window.location.href = "seccuss.html";
+                window.location.href = "success.html";
             } else {
                 alert(`挑戰失敗，請再次嘗試！`);
             }

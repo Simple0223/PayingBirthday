@@ -24,6 +24,7 @@
 
       h3 {
           text-align: center;
+          font-size: 36px;
       }
 
       /* 圖片不貼邊 */
@@ -54,6 +55,7 @@
           padding: 15px;
           margin-bottom: 20px;
           border-radius: 10px;
+          font-size: 32px;
       }
 
           .question h3 {
@@ -77,6 +79,21 @@
               background-color: #FFA500;
           }
 
+      /* 放大原生 radio（支援度最佳） */
+      label input[type="radio"] {
+          width: 24px;
+          height: 24px;
+          transform: scale(1.2); /* 額外放大 */
+      }
+
+      /* 點到時更明顯 */
+      label:hover {
+          background: rgba(255, 255, 255, 0.25);
+      }
+
+      label input[type="radio"]:checked + span {
+          font-weight: bold;
+      }
 </style>
 </head>
 <body>
@@ -88,9 +105,9 @@
     <form id="quizForm">
         <div class="question">
             <h3>2. 請問拍這張照片那天，哪一個敘述錯誤?</h3>
-            <label><input type="radio" name="q1" value="A">A. 在黃浩鴻家</label><br>
-            <label><input type="radio" name="q1" value="B">B. 那天騎車載張惠琪</label><br>
-            <label><input type="radio" name="q1" value="C">C. 那天跟丁大能有吵架</label>
+            <label><input type="radio" name="q1" value="A"> A. 在黃浩鴻家</label><br>
+            <label><input type="radio" name="q1" value="B"> B. 那天騎車載張惠琪</label><br>
+            <label><input type="radio" name="q1" value="C"> C. 那天跟丁大能有吵架</label>
         </div>
     </form>
     <button type="button" onclick="checkAnswers()">送出答案</button>
