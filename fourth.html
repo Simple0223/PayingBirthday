@@ -4,46 +4,63 @@
   <meta charset="UTF-8">
   <title>姵螢生日進階挑戰1</title>
   <style>
-  body {
-    font-family: "Microsoft JhengHei", sans-serif;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-shadow: 1px 1px 3px black;
-    padding: 20px;
-  }
-
-  h1 {
-      text-align: center;
-      font-size: 60px;
-      margin: 20px 0;
-  }
-
-  h3 {
-        text-align: center;
-  }
-
-  /* 預設為直式背景（手機） */
-  body {
-    background-image: url('https://github.com/Simple0223/PayingBirthday/blob/main/kirbyverticalpro.jpg?raw=true'); /* 直式 */
-  }
-
-  /* 橫式時切換背景（橫向手機或桌機） */
-  @media (orientation: landscape) {
       body {
-          background-image: url('https://github.com/Simple0223/PayingBirthday/blob/main/kirbyhorizontalpro.jpg?raw=true'); /* 橫式 */
+          font-family: "Microsoft JhengHei", sans-serif;
+          background-size: cover; /* 依比例覆蓋，不變形 */
+          background-position: center; /* 置中 */
+          background-repeat: no-repeat; /* 不重複 */
+          background-attachment: fixed; /* 固定背景不捲動（桌機生效） */
+          color: white;
+          text-shadow: 1px 1px 3px black;
+          padding: 20px;
       }
-  }
 
-  .question {
-    background: rgba(0,0,0,0.6);
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
-  .question h3 {
-    margin-top: 0;
-  }
+      /* 標題 */
+      h1 {
+          text-align: center;
+          font-size: 60px;
+          margin: 20px 0;
+      }
+
+      h3 {
+          text-align: center;
+      }
+
+      /* 圖片不貼邊 */
+      .q-img {
+          width: 100%;
+          max-width: 650px;
+          display: block;
+          margin: 0 auto 20px auto;
+          padding: 0 20px;
+          border-radius: 10px;
+      }
+
+      /* 手機直式背景 */
+      body {
+          background-image: url('https://github.com/Simple0223/PayingBirthday/blob/main/kirbyvertical.jpg?raw=true');
+      }
+
+      /* 橫式背景（手機橫向＋桌機） */
+      @media (orientation: landscape) {
+          body {
+              background-image: url('https://github.com/Simple0223/PayingBirthday/blob/main/kirbyhorizontal.jpg?raw=true');
+          }
+      }
+
+      /* 題目區塊 */
+      .question {
+          background: rgba(0,0,0,0.6);
+          padding: 15px;
+          margin-bottom: 20px;
+          border-radius: 10px;
+      }
+
+          .question h3 {
+              margin-top: 0;
+          }
+
+      /* 按鈕 */
       button {
           padding: 10px 20px;
           font-size: 36px;
@@ -55,9 +72,11 @@
           display: block;
           margin: 20px auto;
       }
-  button:hover {
-    background-color: #FFA500;
-  }
+
+          button:hover {
+              background-color: #FFA500;
+          }
+
 </style>
 </head>
 <body>
